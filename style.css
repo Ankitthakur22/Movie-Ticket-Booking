@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1979a2;
+  color: #922929;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+}
+
+.movie-container {
+  margin: 20px 0;
+}
+
+.movie-container select {
+  background-color: #6b20202f;
+  border: 0;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 5px 15px 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+.seat {
+  background-color: #16e23f;
+  height: 26px;
+  width: 32px;
+  margin: 3px;
+  font-size: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.selected {
+  background-color: rgb(247, 33, 13);
+}
+
+.seat.sold {
+  background-color: #fff;
+}
+
+.seat:nth-of-type(2) {
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.seat:not(.sold):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.sold):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+.showcase li small {
+  margin-left: 2px;
+}
+
+.row {
+  display: flex;
+}
+
+.screen {
+  background-color: #fff;
+  height: 120px;
+  width: 100%;
+  margin: 15px 0;
+  transform: rotateX(-58deg);
+  box-shadow: 0 3px 10px rgba(216, 57, 57, 0.7);
+}
+
+p.text {
+  margin: 5px 0;
+}
+
+p.text span {
+  color: rgb(85, 9, 120);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+/* image sectionnnn   */
+/* Flexbox layout for image section */
+/* Image Section Container */
+.image-section {
+  display: flex; /* Enables flexbox layout */
+  justify-content: flex-start; /* Align images to the left */
+  align-items: center; /* Align images vertically */
+  gap: 20px; /* Adds space between the images */
+  margin-top: 40px; /* Adds margin at the top */
+  padding: 20px 0; /* Adds padding for a better layout */
+  background-color: #251e08; /* Soft background color */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Shadow around container */
+  overflow: hidden; /* Hides anything outside the container */
+  position: relative;
+}
+
+/* Wrapper to hold images and make them move side to side */
+.image-wrapper {
+  display: flex; /* Align images horizontally */
+  gap: 20px; /* Space between images */
+  position: absolute;
+  white-space: nowrap; /* Prevent images from wrapping */
+}
+
+/* Individual image styling */
+.profile-image {
+  width: 250px; /* Width of each image */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 15px; /* Rounded corners for images */
+  object-fit: cover; /* Ensures images fill the space properly */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Light shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover effect on images */
+.profile-image:hover {
+  transform: scale(1.05); /* Slightly enlarge the image */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  cursor: pointer; /* Indicates interactivity */
+}
+
+
+body {
+  overflow: visible;
+  height: auto;
+  width: auto; /* Disables scrolling */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+/* Overall body styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e5e1e1;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Payment container with more stylish design */
+.payment-container {
+  margin: 10px auto;
+  padding: 20px;
+  background: linear-gradient(145deg, #e0eafc, #cfdef3);
+  border-radius: 15px;
+  border: 1px solid #d1d9e6;
+  width: 50%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.payment-container:hover {
+  transform: scale(1.02);
+}
+
+/* Header inside payment container */
+.payment-container h3 {
+  font-size: 24px;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Payment method radio buttons */
+.payment-container label {
+  font-size: 16px;
+  color: #555;
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.payment-container input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #1e3a8a; /* Modern color for radio button */
+}
+
+/* Styling for the input fields */
+.payment-method-details input, 
+.payment-method-details select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #efeaea;
+  transition: border-color 0.3s ease;
+}
+
+.payment-method-details input:focus, 
+.payment-method-details select:focus {
+  border-color: #1e3a8a;
+  box-shadow: 0 0 5px rgba(30, 58, 138, 0.4);
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #1e3a8a;
+  color: rgb(238, 203, 203);
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0d2c75;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #003b6f;
+}
+
+/* For the hidden payment method details */
+.payment-method-details.hidden {
+  display: none;
+}
+
+/* General form adjustments */
+.payment-details {
+  margin-top: 20px;
+}
+
+/* Adjust spacing between fields */
+.payment-method-details {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 8px 16px;  /* Smaller padding for a more compact button */
+  font-size: 14px;     /* Smaller text */
+  width: 200px;        /* Fixed width for the button */
+  height: 40px;        /* Fixed height for the button */
+  background-color: #4236ab;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.image-section {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  white-space: nowrap; /* Prevent images from wrapping to the next line */
+  overflow: hidden; /* Hide content outside the section */
+}
+
+.profile-image {
+  width: 200px; /* Adjust the size of the images */
+  height: auto;
+  margin: 10px;
+  animation: slideSlider 15s linear infinite; /* Apply the infinite slide animation */
+}
+
+@keyframes slideSlider {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  25% {
+    transform: translateX(0); /* Move into view */
+  }
+  50% {
+    transform: translateX(-100%); /* Slide to the left */
+  }
+  75% {
+    transform: translateX(-200%); /* Move further left */
+  }
+  100% {
+    transform: translateX(100%); /* Loop back to start off-screen on the right */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+  .profile-image {
+    width: 30vw; /* Increase size for larger screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile-image {
+    width: 40vw; /* Adjust size for medium screens (tablets) */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profile-image {
+    width: 60vw; /* Adjust size for smaller screens (mobiles) */
+  }
+}
+
+
+
+
+
+
+
+
+/* Style for the Login Button */
+.login-btn {
+  background-color: #FFD700; /* Golden color */
+  color: black;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  width: 100%; /* Full width for mobile-friendly design */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+  text-transform: uppercase; /* Capitalize text */
+  letter-spacing: 1px; /* Spacing between letters for a clean look */
+}
+
+/* Hover Effect */
+.login-btn:hover {
+  background-color: #e5b100; /* Darker shade of gold on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Focus Effect */
+.login-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6); /* Golden glow on focus */
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .login-btn {
+    width: 90%; /* Slightly smaller width for mobile screens */
+  }
+}
+

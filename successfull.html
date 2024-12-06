@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Transaction Successful</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+      overflow: hidden;
+    }
+
+    .success-message {
+      text-align: center;
+      padding: 30px;
+      border-radius: 10px;
+      background-color: #d4edda;
+      border: 2px solid #c3e6cb;
+      max-width: 500px;
+      width: 100%;
+      display: none; /* Initially hidden */
+    }
+
+    .success-message h1 {
+      color: #155724;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .success-message p {
+      color: #3c763d;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .transaction-id {
+      font-weight: bold;
+      font-size: 16px;
+      color: #3c763d;
+      margin-bottom: 30px;
+    }
+
+    .success-message .button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #28a745;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .success-message .button:hover {
+      background-color: #218838;
+    }
+
+    /* Loading spinner */
+    .loading {
+      text-align: center;
+      font-size: 24px;
+      color: #28a745;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .loading-spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #28a745;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 2s linear infinite;
+      margin: 20px auto;
+    }
+
+    /* Animation for spinner */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading effect (hidden initially) -->
+  <div class="loading">
+    <p>Processing your transaction...</p>
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Success message (hidden initially) -->
+  <div class="success-message">
+    <h1>Transaction Successful</h1>
+    <p>Your movie booking was completed successfully.</p>
+    <p>Thank you for your purchase! Enjoy your movie!</p>
+    <p class="transaction-id">Transaction ID: <span id="transaction-id"></span></p>
+    <a href="index.html" class="button">Back to Home</a>
+  </div>
+
+  <script>
+    // Function to generate a unique transaction ID
+    function generateTransactionID() {
+      const date = new Date();
+      const randomString = Math.random().toString(36).substring(2, 10).toUpperCase();
+      return `TX-${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}-${randomString}`;
+    }
+
+    // Set the transaction ID
+    document.getElementById('transaction-id').innerText = generateTransactionID();
+
+    // Simulate a delay for the "waiting" effect
+    setTimeout(function() {
+      // Hide the loading spinner and show the success message
+      document.querySelector('.loading').style.display = 'none';
+      document.querySelector('.success-message').style.display = 'block';
+    }, 3000); // 3 seconds delay (adjust as needed)
+  </script>
+  
+</body>
+</html>
